@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/supertrupert/bookmark-landing-page)
-- Live Site URL: [Add live site URL here](https://rupert.xyz/bookmark-landing-page/)
+- Solution URL: [GitHub Link](https://github.com/supertrupert/bookmark-landing-page)
+- Live Site URL: [Live Site](https://rupert.xyz/bookmark-landing-page/)
 
 ## My process
 
