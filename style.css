@@ -1,0 +1,826 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colors */
+
+:root {
+    --main-text: hsl(229, 8%, 60%); /* Grayish Blue: hsl(229, 8%, 60%) */
+    --secondary-text: hsl(229, 31%, 21%); /* Very Dark Blue: hsl(229, 31%, 21%) */
+    --main-fill: hsl(231, 69%, 60%); /* Soft Blue: hsl(231, 69%, 60%) */
+    --secondary-fill: hsl(0, 94%, 66%); /* Soft Red: hsl(0, 94%, 66%) */
+    }
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--main-text);
+    width: 100%;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+button,
+.button {
+    padding: 0.7rem 1.9rem;
+    color: white;
+    background-color: var(--secondary-fill);
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+button:hover {
+    background: none;
+    border: 2px solid var(--secondary-fill);
+    color: var(--secondary-fill);
+}
+
+.secondary-button {
+    font-size: 0.9rem;
+    text-transform: initial;
+    letter-spacing: initial;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0.7rem 1.4rem;
+}
+
+.secondary-button:hover {
+    background-color: white;
+    border: 2px solid var(--main-fill);
+    color: var(--main-fill);
+}
+
+a {
+    text-decoration: none;
+    color: hsla(229, 31%, 21%, 1);
+}
+
+a:hover {
+    color: var(--secondary-fill);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h2, h3 {
+    color: var(--secondary-text);
+}
+
+.subtext {
+    width: 48%;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.overlay {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: hsla(229, 31%, 21%, 0.95);
+    transition: 0.2s;
+    z-index: 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container {
+    padding: 3rem 5rem 3rem 8rem;
+}
+
+.section-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+header .logo {
+    z-index: 1;
+}
+
+header .nav {
+    list-style-type: none;
+    margin: 0 0 0 2rem;
+}
+
+header .nav a {
+    display: block;
+}
+
+header .nav li {
+    margin-right: 3rem;
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+header .nav a:last-of-type li {
+    margin-right: 5rem;
+}
+
+
+header .hamburger {
+    display: none;
+    font-size: 2rem;
+    color: black;
+}
+
+/* Hero Section */
+
+.hero {
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero .hero-left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.hero .hero-right {
+    width: 55%;
+}
+
+.hero .hero-right::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-fill);
+    width: 40%;
+    height: 350px;
+    top: 17em;
+    right: 0;
+    z-index: -1;
+    border-radius: 170px 0 0 170px;
+}
+
+.hero .hero-left h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-text);
+}
+
+.hero .hero-left p {
+    line-height: 1.6rem;
+    letter-spacing: 0.01em;
+}
+
+.hero .hero-left .hero-button-section button:first-of-type {
+    background-color: var(--main-fill);
+    margin-right: 1rem;
+}
+
+.hero .hero-left .hero-button-section button:first-of-type:hover {
+    background-color: white;
+    border: 2px solid var(--main-fill);
+    color: var(--main-fill);
+}
+
+.hero .hero-left .hero-button-section button:last-of-type {
+    background-color: rgb(250,250,250);
+    color: hsla(229, 31%, 21%, 0.85);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+} 
+
+.hero .hero-left .hero-button-section button:last-of-type:hover {
+    background-color: white;
+    border: 2px solid hsla(229, 31%, 21%, 0.85);
+}
+
+/* Features Section */
+
+.features .tab-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.features .tab-section .tab-nav {
+    list-style-type: none;
+    margin-top: 5rem;
+    position: relative;
+}
+
+.features .tab-section .tab-nav::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: grey;
+    opacity: 0.3;
+    bottom: -25px;
+}
+
+.features .tab-section .tab-nav li {
+    color: var(--main-text);
+    justify-self: stretch;
+    padding: 0 2.5rem;
+}
+
+.features .tab-section .tab-nav li:hover {
+    color: var(--secondary-fill);
+    cursor: pointer;
+}
+
+.features .tab-section .tab-nav li.active {
+    color: black;
+    position: relative;
+}
+
+.features .tab-section .tab-nav li.active::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    background: var(--secondary-fill);
+    opacity: 1;
+    bottom: -25px;
+}
+
+.features .tab-section .tab-content {
+    margin-top: 3rem;
+}
+
+.features .tab-section .tab-content .tab-content-right {
+    width: 45%;
+    padding: 2rem;
+}
+
+.features .tab-section .tab-content .tab-content-right > * {
+    padding: 1rem 0;
+}
+
+.features .tab-section .tab-content .tab-content-right .features-button button {
+    background-color: var(--main-fill);
+}
+
+.features .tab-section .tab-content .tab-content-right .features-button button:hover {
+    background-color: white;
+}
+
+.features .tab-section .tab-content .tab-content-left {
+    width: 55%;
+    padding: 3rem;
+}
+
+.features .tab-section .tab-content .tab-content-left::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-fill);
+    width: 40%;
+    height: 250px;
+    top: 60em;
+    left: 0;
+    z-index: -1;
+    border-radius: 0 170px 170px 0;
+}
+
+.features .tab-section .tab-content [data-tab-content] {
+    display: none;
+}
+
+.features .tab-section .tab-content .active[data-tab-content] {
+    display: flex;
+}
+
+/* Extension Section */
+
+.extension .browser-section {
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.extension .browser-section .browser-box {
+    width: 250px;
+    padding: 1.5rem 0;
+    flex-direction: column;
+    box-shadow: 0px 10px 15px 0px rgba(235,235,235,1);
+    border-radius: 0.8rem;
+}
+
+.extension .browser-section .browser-box2 {
+    margin: 4rem 0 0 0;
+}
+
+.extension .browser-section .browser-box3 {
+    margin: 8rem 0 0 0;
+}
+
+.extension .browser-section .browser-box h3 {
+    margin: 2rem 0 0 0;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+}
+
+.extension .browser-section .browser-box small {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.8rem;
+}
+
+.extension .browser-section .browser-box img {
+    width: 100%;
+    margin: 2rem 0 0 0;
+}
+
+.extension .browser-section .browser-box .browser-box-button button {
+    margin: 1.5rem 0 0 0;
+    background-color: var(--main-fill);
+}
+
+.extension .browser-section .browser-box .browser-box-button button:hover {
+    background-color: white;
+}
+
+.extension .browser-section .browser-box img:first-of-type {
+    display: block;
+    width: 30%;
+}
+
+/* FAQ Section */
+
+.faq {
+    margin: 5rem 0 5rem 0;
+}
+
+.faq .accordion {
+    width: 550px;
+    margin: 3rem 0 0 0;
+    border-top: 1px solid rgba(230,230,230,1);
+}
+
+.faq .accordion .accordion-section {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(230,230,230,1);  
+}
+
+.faq .accordion .accordion-section .accordion-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-text);
+    cursor: pointer;
+}
+
+.faq .accordion .accordion-section .accordion-section-title:hover {
+    color: var(--secondary-fill);
+}
+
+.faq .accordion .accordion-section .accordion-section-title h5 {
+    font-weight: normal;
+}
+
+
+.faq .accordion .accordion-section .accordion-section-text {
+    margin: 2rem 0 0 0;
+    line-height: 2rem;
+    font-size: 0.9rem;
+}
+
+.faq .accordion .accordion-section .accordion-section-title img {
+    width: 18px;
+    height: 100%;
+}
+
+.close-icon {
+    transform: rotate(180deg);
+}
+
+.faq .accordion .accordion-section [accordion-content] {
+    display: none;
+}
+
+.faq .accordion .accordion-section .active[accordion-content] {
+    display: block;
+}
+
+.faq button {
+    margin: 2rem 0 0 0;
+    background-color: var(--main-fill);
+}
+
+
+/* Newsletter Section */
+
+.newsletter {
+    background-color: var(--main-fill);
+    margin:0;
+    padding: 3rem;
+    color: white;
+}
+
+.newsletter > * {
+    padding: 1rem 0;
+    max-width: 400px;
+    text-align: center;
+}
+
+.newsletter h5 {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.newsletter h1 {
+    letter-spacing: 0.05rem;
+}
+
+.newsletter form {
+    display: flex;
+}
+
+.newsletter form .form-control {
+    position: relative;
+    text-align: left;
+    margin-right: 1rem;
+}
+
+.newsletter form .form-control input.error {
+    border: 2px solid var(--secondary-fill);
+    border-bottom: 20px solid var(--secondary-fill);
+}
+
+.newsletter form .form-control img {
+    position: absolute;
+    width: 25px;
+    right: 15px;
+    top: 7px;
+    display: none;
+}
+
+.newsletter form .form-control small {
+    font-size: 0.6rem;
+    display: none;
+    font-style: italic;
+    padding: 0.5rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: -3px;
+}
+
+.newsletter form .form-control .input {
+    line-height: 2.2rem;
+    width: 250px;
+    border-radius: 5px 5px 5px 5px;
+    border: 2px solid transparent;
+    box-shadow: none; 
+    padding: 0 0 0 1rem;
+}
+
+.newsletter form .form-control .input:focus {
+    outline: 0;
+}
+
+.newsletter form .input::placeholder {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.newsletter form .button {
+    padding: 0 1.5rem;
+    text-transform: initial;
+    font-size: 0.8rem;
+    box-shadow: none;
+    border: 2px solid var(--secondary-fill);
+    height: 39px;
+}
+
+.newsletter form .button:hover{ 
+    background-color: white;
+    color: var(--secondary-fill);
+}
+
+/* Footer Section */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    background-color: var(--secondary-text);
+    padding: 0 8rem;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+footer ul li {
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+footer > ul:first-of-type {
+    list-style-type: none;
+}
+
+footer > ul:first-of-type > li > a {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+footer > ul:first-of-type > li > a:hover {
+    color: var(--secondary-fill);
+}
+
+footer > ul:last-of-type {
+    list-style-type: none;
+}
+
+footer > ul:last-of-type > li {
+    padding: 0 1rem;
+}
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .container {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    header svg {
+        z-index: 2;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .hero .hero-right {
+        order: 1;
+    }
+
+    .hero .hero-right::after {
+        width: 80%;
+        height: 200px;
+        top: 11em;
+    }
+
+    .hero .hero-left {
+        text-align: center;
+        order: 2;
+    }
+
+    .hero .hero-left, .hero .hero-right {
+        width: 100%;
+    }
+
+    .hero .hero-left h1 {
+        font-size: 2rem;
+    }
+
+    header .nav {
+        z-index: 2;
+        text-align: center;
+        display: none;
+        justify-content: unset;
+        align-items: unset;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        width: 300px;
+        height: 200px;
+        margin-top: -100px;
+        margin-left: -150px;
+    }
+
+    header .nav li {
+        margin: 0;
+        color: white;
+        border-top: 1px solid;
+        padding: 20px 0px;
+        font-size: 1.2rem;
+        border-color: rgba( 255,255,255,0.2);
+    }
+
+    header .nav a li:last-of-type {
+        margin: 0;
+        padding-top: 30px;
+    }
+
+    header .nav li::before {
+        content: '';
+        height: 1px;
+    }
+
+    header .nav li button {
+        width: 100%;
+        background: transparent;
+        border: 2px solid white;
+        box-shadow: none;
+        font-size: 1.2rem;
+    }
+    
+    header .hamburger {
+        display: block;
+    }
+
+    header .hamburger .close {
+        display: none;
+        color: white;
+    }
+
+    .features .tab-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .features .tab-section .tab-content .active[data-tab-content] {
+        flex-direction: column;
+    }
+
+    .features .tab-section .tab-content .tab-content-left {
+        padding: 0;
+    }
+
+    .features .tab-section .tab-content .tab-content-right, .features .tab-section .tab-content .tab-content-left {
+        width: 100%
+    }
+
+    .features .tab-section .tab-content .tab-content-right > * {
+        text-align: center;
+    }
+
+    .features .tab-section .tab-content .tab-content-right {
+        margin-top: 4rem;
+        padding: 0;
+    }
+
+    .features .tab-section .tab-nav li {
+        padding: 1.2rem;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(48, 48, 48, 0.338);
+    }
+
+    .features .tab-section .tab-nav li.active::before {
+        content: '';
+        position: absolute;
+        height: 4px;
+        width: 120px;
+        left: 0;
+        transform: translateX(100px);
+        background: var(--secondary-fill);
+        opacity: 1;
+        bottom: 0;
+    }
+
+    .features .tab-section .tab-nav li:last-of-type {
+        border-bottom: 1px solid rgba(48, 48, 48, 0.338);
+    }
+
+    .features .tab-section .tab-nav li:first-of-type {
+        border-top: 1px solid rgba(48, 48, 48, 0.338);
+    }
+
+    .features .tab-section .tab-nav::before {
+        display: none;
+    }
+
+    .features .tab-section .tab-content .tab-content-left::after {
+        content: "";
+        position: absolute;
+        background-color: var(--main-fill);
+        width: 80%;
+        height: 150px;
+        top: 75em;
+        left: 0;
+        z-index: -1;
+        border-radius: 0 170px 170px 0;
+    }
+
+    .features .tab-section .tab-content .tab-content-right > .features-button {
+        display: none;
+    }
+
+    .features .subtext {
+        width: 100%;
+    }
+ 
+    .extension {
+        align-items: initial;
+    }
+
+    .extension .subtext {
+        margin: 1rem;    
+    }
+
+    .extension h2, .extension p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .extension .browser-section {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .extension .browser-section .browser-box {
+        width: 100%;
+    }
+
+    .extension .browser-section .browser-box2, .extension .browser-section .browser-box3 {
+        margin: 2rem 0 0 0;
+    }
+
+    .faq h2 {
+        text-align: center;
+    }
+
+    .faq .subtext {
+        width: 100%;
+    }
+
+    .faq .accordion {
+        width: 100%;
+    }
+    
+    .newsletter {
+        padding: 1rem;
+    }
+    
+    .newsletter form {
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .newsletter form .form-control {
+        margin: 0;
+    }
+
+    .newsletter form .button {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .newsletter form .form-control .input {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        height: 100%;
+        padding: 2rem;
+    }
+
+    footer ul:first-of-type {
+        flex-direction: column;
+    }
+
+    footer ul:first-of-type > li {
+        padding: 0.5rem 0;
+    }
+
+    footer ul:last-of-type {
+        margin-top: 2rem;
+    }
+
+    footer ul:last-of-type > li {
+        padding: 0 0.5rem;
+    }
+}
